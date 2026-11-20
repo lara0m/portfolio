@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import Sidebar from '../components/Sidebar.jsx'
+import Sidebar from '../components/Sidebar'
 import ProjectCard from '../components/ProjectCard.jsx'
-import { projects, ALL_TECHS } from '../data/projects.js'
+import { projects, ALL_TECHS } from '../data/projects'
 
 export default function Proyectos() {
   const [selected, setSelected] = useState([])

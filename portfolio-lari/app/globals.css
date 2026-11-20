@@ -1,13 +1,71 @@
 
 :root {
   --bg: #0b1120;
-  --bg-2: #0e1526;
+  --bg-side: #0f1729;   /* sidebar más claro que el fondo */
   --border: #1e2a3f;
-  --text: #a9b4c7;
-  --muted: #5f6b82;
+  --text: #b4bfd3;      /* antes #a9b4c7 */
+  --muted: #8a96ad;     /* antes #5f6b82: era lo que se veía tan oscuro */
   --accent: #6b6bff;
   --orange: #fea55f;
   --green: #43d9ad;
+  --teal: #8fe3d0;
+  --pink: #e5677e;
+  --purple: #6b6bff;
+}
+
+.header__name { color: var(--teal); }
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: var(--bg-side);
+  border-right: 1px solid var(--border);
+  overflow: auto;
+}
+.side-section { border-bottom: 1px solid var(--border); }
+.side-section__head {
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; padding: 12px 16px;
+  background: none; border: none; color: #fff;
+  font: inherit; font-size: 14px; text-align: left; cursor: pointer;
+}
+.side-section__body { padding: 4px 16px 12px; }
+
+/* Animación abrir/cerrar */
+.collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+.collapse--open { grid-template-rows: 1fr; }
+.collapse__inner { overflow: hidden; min-height: 0; }
+
+.caret { transition: transform 0.2s; transform: rotate(-90deg); }
+.caret--open { transform: rotate(0); }
+.chev { transition: transform 0.2s; }
+.chev--open { transform: rotate(90deg); }
+@keyframes sidebar-in {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.sidebar {
+  animation: sidebar-in 0.4s ease-out both;
+}
+
+/* Árbol */
+.tree-row {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; padding: 6px 0;
+  background: none; border: none; color: var(--muted);
+  font: inherit; text-align: left; cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.tree-row:hover { color: #fff; }
+.tree-row svg { flex-shrink: 0; }
+.tree-children {
+  margin-left: 7px; padding-left: 14px;
+  border-left: 1px solid var(--border);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }

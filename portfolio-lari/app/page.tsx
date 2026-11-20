@@ -1,8 +1,9 @@
+'use client'
 import { useState } from 'react'
-import Header from './components/Header.jsx'
-import Hello from './pages/Hello.jsx'
-import MiPerfil from './pages/MiPerfil.jsx'
-import Proyectos from './pages/Proyectos.jsx'
+import Header from './src/components/Header.jsx'
+import Hello from './src/pages/Hello.jsx'
+import MiPerfil from './src/pages/MiPerfil.jsx'
+import Proyectos from './src/pages/Proyectos.jsx'
 
 const TABS = [
   { id: 'hello', label: 'hello-world!', Page: Hello },
@@ -10,9 +11,10 @@ const TABS = [
   { id: 'proyectos', label: 'proyectos', Page: Proyectos },
 ]
 
-export default function App() {
-  const [active, setActive] = useState('hello')
-  const { Page } = TABS.find((t) => t.id === active)
+export default function Home() {
+  const [active, setActive] = useState<string>('hello')
+  const current = TABS.find((t) => t.id === active) ?? TABS[0]
+  const Page = current.Page
 
   return (
     <div className="app">

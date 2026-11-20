@@ -142,3 +142,49 @@ a { color: #e07a7a; }
   border-radius: 6px; padding: 4px 12px; font: inherit; cursor: pointer;
 }
 .btn:hover { background: #26365a; }
+.tech {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 7px 0;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* Checkbox personalizado */
+.tech input {
+  appearance: none;
+  -webkit-appearance: none;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  background: transparent;
+  border: 1px solid var(--muted);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.tech input:checked {
+  background: #6b7a99;
+  border-color: #6b7a99;
+}
+.tech input:checked::after {
+  content: '';
+  width: 5px;
+  height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+/* Logo */
+.tech__icon {
+  flex-shrink: 0;
+  font-size: 22px;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.tech:hover .tech__icon { color: #fff; }

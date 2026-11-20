@@ -2,14 +2,14 @@ export default function Hello() {
   return (
     <section className="hello">
       <div className="hello__text">
-        <p className="muted">Hi all. I am</p>
+        <p className="muted">Hello World</p>
         <h1 className="hello__name">Lara Muiña</h1>
-        <h2 className="hello__role">&gt; Front-end developer</h2>
-        <p className="muted">// find my profile on Github:</p>
+        <h2 className="hello__role">&gt; Backend developer</h2>
+        <p className="muted">// find my profile on Linkedin:</p>
         <p>
-          <span className="kw">const</span> githubLink ={' '}
-          <a href="https://github.com/lara0m" target="_blank" rel="noreferrer">
-            "https://github.com/lara0m"
+          <span className="kw">const</span> linkeLink ={' '}
+          <a href="https://www.linkedin.com/in/lara-mui%C3%B1a-2456933b8/" target="_blank" rel="noreferrer">
+            "https://www.linkedin.com/in/lara-muiña"
           </a>
         </p>
       </div>

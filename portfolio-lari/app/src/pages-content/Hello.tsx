@@ -1,4 +1,4 @@
-export default function Hello() {
+export default function Hello({ onEnter }: { onEnter: () => void }) {
   return (
     <section className="hello">
       <div className="hello__text">
@@ -15,7 +15,9 @@ export default function Hello() {
       </div>
 
       {/* Acá después va el juego de la viborita */}
-      <div className="hello__game">[ game placeholder ]</div>
+      <button className="hello__game" onClick={onEnter}>
+        [ game placeholder ]
+      </button>
     </section>
   )
 }

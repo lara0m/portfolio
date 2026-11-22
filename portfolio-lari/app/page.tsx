@@ -1,30 +1,36 @@
 'use client'
 
 import { useState } from 'react'
-import type { ComponentType } from 'react'
 import Header from './src/components/Header'
 import Hello from './src/pages-content/Hello'
 import MiPerfil from './src/pages-content/MiPerfil'
 import Proyectos from './src/pages-content/Proyectos'
+import Intereses from './src/pages-content/Intereses'
 
-type Tab = { id: string; label: string; Page: ComponentType }
-
-const TABS: Tab[] = [
-  { id: 'hello', label: 'hello-world!', Page: Hello },
-  { id: 'perfil', label: 'mi-perfil', Page: MiPerfil },
-  { id: 'proyectos', label: 'proyectos', Page: Proyectos },
+const TABS = [
+  { id: 'hello', label: 'hello-world!' },
+  { id: 'perfil', label: 'mi-perfil' },
+  { id: 'proyectos', label: 'proyectos' },
+  { id: 'intereses', label: 'intereses' },
 ]
 
 export default function Home() {
   const [active, setActive] = useState<string>('hello')
-  const current = TABS.find((t) => t.id === active) ?? TABS[0]
-  const Page = current.Page
 
   return (
     <div className="app">
-      <Header tabs={TABS} active={active} onChange={setActive} />
+      {/* El header solo existe fuera de la portada */}
+      {active !== 'hello' && (
+        <Header tabs={TABS} active={active} onChange={setActive} />
+      )}
+
       <main className="main">
-        <Page />
+        <div className="page" key={active}>
+          {active === 'hello' && <Hello onEnter={() => setActive('perfil')} />}
+          {active === 'perfil' && <MiPerfil />}
+          {active === 'intereses' && <Intereses />}
+          {active === 'proyectos' && <Proyectos />}
+        </div>
       </main>
     </div>
   )

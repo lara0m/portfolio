@@ -27,6 +27,7 @@ export function SidebarSection({
 }) {
   const [open, setOpen] = useState(defaultOpen)
   return (
+    
     <section className="side-section">
       <button
         className="side-section__head"
@@ -69,9 +70,9 @@ export function TreeFolder({
   )
 }
 
-export function TreeItem({ icon, children }: { icon?: ReactNode; children: ReactNode }) {
+export function TreeItem({ icon, children, active=false }: { icon?: ReactNode; children: ReactNode, active?: boolean }) {
   return (
-    <div className="tree-row">
+    <div className={"tree-row" + (active ? ' tree-row--active' : '')}>
       {icon}
       <span>{children}</span>
     </div>

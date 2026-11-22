@@ -164,9 +164,6 @@ a { color: #e07a7a; }
   width: 100%;
   aspect-ratio: 21 / 9;
   border-radius: 10px;
-  background-color: var(--accent); /* se ve si no hay imagen */
-  background-size: cover;
-  background-position: center;
 }
 
 .pblock__row {
@@ -195,7 +192,6 @@ a { color: #e07a7a; }
   font-size: 32px;
   font-weight: 700;
   color: #fff;
-  margin: 120px 0 56px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -487,4 +483,109 @@ html, body {
 @media (prefers-reduced-motion: reduce) {
   .tl-scroller { scroll-behavior: auto; }
   .tl-layer, .tl-block, .tl-photo__img { transition: none; }
+}
+
+/* 2. Cursor de la máquina de escribir */
+.caret-blink { color: var(--teal); margin-left: 2px; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* 3. Revelado por palabra */
+.rw {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0.15em 0;   /* evita que se corten tildes y la ñ */
+  margin: -0.15em 0;
+}
+.rw__in {
+  display: inline-block;
+  transform: translateY(115%);
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal-text--in .rw__in { transform: none; }
+
+/* Líneas del timeline que entran una tras otra */
+.tl-block--on .tl-line {
+  animation: line-in 0.45s ease both;
+  animation-delay: calc(var(--i) * 110ms + 150ms);
+}
+@keyframes line-in {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* 5. Aparición al scrollear */
+.pblock,
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.pblock--in,
+.reveal--in { opacity: 1; transform: none; }
+
+/* 6. Glow pulsante */
+.hero-stats strong { animation: glow 2.8s ease-in-out infinite; }
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 14px rgba(143, 227, 208, 0.3); }
+  50%      { text-shadow: 0 0 34px rgba(143, 227, 208, 0.75); }
+}
+.tl-line--marker::before { animation: marker-pulse 2s ease-in-out infinite; }
+@keyframes marker-pulse {
+  0%, 100% { box-shadow: 0 0 6px var(--teal); }
+  50%      { box-shadow: 0 0 16px var(--teal), 0 0 4px var(--teal); }
+}
+
+/* 7. Subrayado que se dibuja */
+.proj-group-wrap { margin: 120px 0 56px; }
+.proj-group {
+  display: inline-block;
+  margin: 0;
+  padding-bottom: 12px;
+  background: linear-gradient(var(--teal), var(--teal)) 0 100% / 0% 2px no-repeat;
+  transition: background-size 0.9s ease 0.3s;
+}
+.reveal--in .proj-group { background-size: 100% 2px; }
+
+.pblock__stack a {
+  color: var(--text);
+  text-decoration: none;
+  background: linear-gradient(var(--teal), var(--teal)) 0 100% / 0% 1px no-repeat;
+  transition: background-size 0.3s ease, color 0.3s;
+}
+.pblock__stack a:hover { background-size: 100% 1px; color: var(--teal); }
+
+/* 8. Parallax en proyectos y zoom lento en la portada de natación */
+.pblock__img { position: relative; overflow: hidden; }
+.pblock__img-in {
+  position: absolute;
+  inset: -50px 0;
+  background-color: var(--accent);
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.hero { overflow: hidden; }
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+.tl-layer--on .hero__bg { animation: kenburns 14s ease-out forwards; }
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.1); }
+}
+
+/* Si el sistema pide menos movimiento, todo queda quieto */
+@media (prefers-reduced-motion: reduce) {
+  .pblock, .reveal { opacity: 1; transform: none; transition: none; }
+  .rw__in { transform: none; transition: none; }
+  .hero-stats strong,
+  .tl-line--marker::before,
+  .caret-blink,
+  .tl-block--on .tl-line,
+  .tl-layer--on .hero__bg { animation: none; }
 }

@@ -3,6 +3,7 @@ import Sidebar, { SidebarSection } from '../components/Sidebar'
 import ProjectCard from '../components/ProjectCard'
 import { TECH_ICONS } from '../components/TechIcons'
 import { projects, ALL_TECHS, OTHERS_TITLE } from '../data/projects'
+import Reveal from '../components/Reveal'
 
 export default function Proyectos() {
   const [selected, setSelected] = useState<string[]>([])
@@ -58,9 +59,11 @@ export default function Proyectos() {
 
           {others.length > 0 && (
             <>
-              <h2 className="proj-group" ref={othersRef}>
+              <Reveal className="proj-group-wrap">
+                <h2 className="proj-group" ref={othersRef}>
                 {OTHERS_TITLE}
-              </h2>
+                </h2>
+              </Reveal>  
               {others.map((p) => (
                 <ProjectCard key={p.id} project={p} />
               ))}

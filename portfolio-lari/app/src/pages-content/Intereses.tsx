@@ -5,6 +5,8 @@ import Sidebar, { SidebarSection, TreeItem } from '../components/Sidebar'
 import { FileTextIcon, ImageIcon, MailIcon, PhoneIcon } from '../components/Icons'
 import { profile } from '../data/profile'
 import { intro, stats, steps } from '../data/natacion'
+import CountUp from '../components/CountUp'
+import type { CSSProperties } from 'react'
 
 export default function Intereses() {
   const scrollerRef = useRef<HTMLDivElement>(null)
@@ -68,22 +70,25 @@ export default function Intereses() {
                 <div className="panel__tab">
                   <ImageIcon /> foto-natación.jpg
                 </div>
-                <div
-                  className="hero"
-                  style={{
-                    backgroundImage: `linear-gradient(to top, rgba(11,17,32,.85), rgba(11,17,32,0) 45%), url("${intro.photo}"), linear-gradient(160deg, #17223a, #0b1120)`,
-                  }}
-                >
+                <div className="hero">
+                    <div
+                        className="hero__bg"
+                        style={{
+                        backgroundImage: `linear-gradient(to top, rgba(11,17,32,.85), rgba(11,17,32,0) 45%), url("${intro.photo}"), linear-gradient(160deg, #17223a, #0b1120)`,
+                        }}
+                    />
                   <ul className="hero-stats">
-                    {stats.map((s) => (
-                      <li key={s.label}>
-                        <strong>{s.value}</strong>
-                        <div>
-                          {s.pre && <small>{s.pre}</small>}
-                          <span>{s.label}</span>
-                          {s.post && <small>{s.post}</small>}
-                        </div>
-                      </li>
+                    {stats.map((s, i) => (
+                        <li key={s.label}>
+                            <strong>
+                            <CountUp value={s.value} play={step === 0} delay={i * 250} />
+                            </strong>
+                            <div>
+                            {s.pre && <small>{s.pre}</small>}
+                            <span>{s.label}</span>
+                            {s.post && <small>{s.post}</small>}
+                            </div>
+                        </li>
                     ))}
                   </ul>
                   <button className="hero-scroll" onClick={() => goTo(1)}>
@@ -109,10 +114,14 @@ export default function Intereses() {
                         >
                           <div className="tl-lines">
                             {lines.map((text, n) => (
-                              <div key={n} className={'tl-line' + (n === 5 ? ' tl-line--marker' : '')}>
-                                <span className="code__num">{n + 1}</span>
-                                <span className={n === 1 ? 'tl-title' : ''}>{text}</span>
-                              </div>
+                                <div
+                                    key={n}
+                                    className={'tl-line' + (n === 5 ? ' tl-line--marker' : '')}
+                                    style={{ '--i': n } as CSSProperties}
+                                >
+                                    <span className="code__num">{n + 1}</span>
+                                    <span className={n === 1 ? 'tl-title' : ''}>{text}</span>
+                                </div>
                             ))}
                           </div>
                         </div>

@@ -11,9 +11,6 @@ export default function MiPerfil() {
             <TreeItem icon={<FileTextIcon />}>sobre-mi</TreeItem>
             <TreeItem icon={<ImageIcon />}>foto-lari</TreeItem>
           </TreeFolder>
-          <TreeFolder label="hobbies" color="var(--purple)">
-            <TreeItem icon={<FileTextIcon />}>lectura</TreeItem>
-          </TreeFolder>
         </SidebarSection>
 
         <SidebarSection title="contacto">

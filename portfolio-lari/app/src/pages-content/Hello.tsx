@@ -16,7 +16,7 @@ export default function Hello({ onEnter }: { onEnter: () => void }) {
 
       {/* Acá después va el juego de la viborita */}
       <button className="hello__game" onClick={onEnter}>
-        [ game placeholder ]
+        [ foto placeholder ]
       </button>
     </section>
   )

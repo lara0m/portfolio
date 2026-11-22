@@ -7,6 +7,8 @@ import MiPerfil from './src/pages-content/MiPerfil'
 import Proyectos from './src/pages-content/Proyectos'
 import Intereses from './src/pages-content/Intereses'
 
+
+
 const TABS = [
   { id: 'hello', label: 'hello-world!' },
   { id: 'perfil', label: 'mi-perfil' },

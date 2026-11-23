@@ -18,8 +18,7 @@ export default function Hello({ onEnter }: { onEnter: () => void }) {
 
         {/* Compu flotante + texto encima */}
         <div className="intro__left">
-          <img className="intro__crt" src="/hello-crt.svg" alt="" aria-hidden="true" draggable={false} />
-
+          
           <div className="intro__text">
             <h1 className="intro__name">
               <RevealText text="Lara Muiña" />

@@ -23,7 +23,7 @@ export const steps = [
   {
     id: '02',
     title: 'proceso',
-    photo: '/img/natacion-02.png',
+    photo: '/natacion-02.jpeg',
     text: [
       'Empecé a entrenar cada vez mas horas',
       'Empecé a ganar múltiples medallas.',

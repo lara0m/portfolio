@@ -33,7 +33,7 @@ export default function MiPerfil() {
 
       <section className="panel panel--photo">
         <div className="panel__tab">foto-lari</div>
-        <img className="photo" src={profile.photo} alt="Foto de Lara" />
+        <img className="photo" src="/mi-perfil.jpeg" alt="Foto de Lara" />
       </section>
     </div>
   )

@@ -12,10 +12,10 @@ export const steps = [
   {
     id: '01',
     title: 'origen',
-    photo: '/img/natacion-01.png',
+    photo: '/natacion-01.svg',
     text: [
       'La natación es mi hilo biográfico:',
-      'ritmo, foco y constancia.',
+      'ritmo, foco y constancia desde principios de 2025.',
       'Aprendí a confiar en el proceso',
       'mucho antes de ver el resultado.',
     ],
@@ -25,21 +25,20 @@ export const steps = [
     title: 'proceso',
     photo: '/img/natacion-02.png',
     text: [
-      'Entrenar es volver a empezar.',
-      'Medir, ajustar, respirar.',
-      'Cada brazada construye precisión;',
-      'cada error también escribe código.',
+      'Empecé a entrenar cada vez mas horas',
+      'Empecé a ganar múltiples medallas.',
+      '4 medallas en 2025, 10 medallas en 2026',
     ],
   },
   {
     id: '03',
-    title: 'constancia',
-    photo: '/img/natacion-03.png',
+    title: 'actualidad',
+    photo: '/natacion-03.jpeg',
     text: [
-      'La meta no termina el recorrido.',
-      'Solo confirma lo aprendido:',
-      'sostener un proceso largo',
-      'sin perder sensibilidad ni foco.',
+      'Estoy en el Top 5 nacional de mi categoría juvenil',
+      'Y Top 9 nacional a nivel absoluto.',
+      'Competí internacionalmente representando a Argentina en Brasil.',
+      'Gané 1 medalla de oro y 1 de plata.',
     ],
   },
 ]

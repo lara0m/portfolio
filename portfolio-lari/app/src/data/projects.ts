@@ -19,20 +19,29 @@ export const projects: Project[] = [
     category: 'inteligencia-artificial',
     description:
       'Aplicación de escritorio que integra modelos de IA sobre cámaras de seguridad existentes para detectar riesgos automáticamente.',
-    image: null,
+    image: '/horusai.jpg',
     techs: ['Python'],
     meta: '5.º año · proyecto principal',
     featured: true,
+    links: [
+      { label: 'Github', url: 'https://github.com/Teo50000/Horus-AI'},
+      { label: 'Website', url: 'https://landing-horusai.vercel.app/' },
+      { label: 'Demo', url: 'https://horus-app-release.s3.amazonaws.com/horusai_0.2.0_x64-setup.exe' },
+      { label: 'Instagram', url: 'https://instagram.com/horusai.app' },
+    ],
   },
-  {
+  {  
     id: 2,
     title: 'NEIA',
     category: 'inteligencia-artificial',
     description:
       'Plataforma web de análisis encefalográfico (EEG) capaz de identificar si una persona experimentó emociones positivas o negativas.',
-    image: null,
+    image: '/neia.svg',
     techs: ['React', 'Python'],
     meta: '4.º año',
+    links: [
+      { label: 'Github', url: 'https://github.com/lara0m/proyecto-NEIA'},
+    ],  
   },
   {
     id: 3,
@@ -41,7 +50,10 @@ export const projects: Project[] = [
     description: 'Robot guía diseñado para orientar a los alumnos hacia sus aulas.',
     image: null,
     techs: ['HTML', 'CSS'],
-    meta: '4.º año',
+    meta: '3.º año',
+    links: [
+      { label: 'Github', url: 'https://github.com/3-TIC-ORT/proyecto-3-marcelo-ticardo'},
+    ],
   },
   {
     id: 4,
@@ -49,9 +61,13 @@ export const projects: Project[] = [
     category: 'desarrollo-web',
     description:
       'Aplicación web gamificada (estilo Kahoot) enfocada en el aprendizaje interactivo de lenguajes de programación como JavaScript y Python. Desarrollada en 48 horas durante una hackathon escolar.',
-    image: null,
+    image: '/mind-race.png',
     techs: ['React', 'JavaScript'],
-    meta: '3.º año · hackathon',
+    meta: '5.º año · hackathon',
+    links: [
+      { label: 'Github', url: 'https://github.com/lara0m/hackathon-2026'},
+      { label: 'Website', url: 'https://hackathon-2026-dusky.vercel.app/' },
+    ],
   },
 ]
 

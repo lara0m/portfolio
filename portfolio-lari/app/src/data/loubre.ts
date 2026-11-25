@@ -30,3 +30,15 @@ export const galeria = {
     (_, i) => `/loubre/galeria/foto-${String(i + 1).padStart(2, '0')}.jpg`
   ),
 }
+
+export const recorrido = {
+  eyebrow: 'MI RECORRIDO',
+  title: 'Cuadro a cuadro',
+  sub: 'Así fue creciendo mi mirada como fotógrafa.',
+  // Vacío = rollo dibujado en vector. Con tu imagen del Figma: '/loubre/rollo.png'
+  canister: '',
+  photos: Array.from(
+    { length: 7 },
+    (_, i) => `/loubre/recorrido/foto-${String(i + 1).padStart(2, '0')}.jpg`
+  ),
+}

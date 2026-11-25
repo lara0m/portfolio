@@ -2,6 +2,7 @@ import Navbar from './src/components/Navbar'
 import Intro from './src/components/Intro'
 import SobreMi from './src/components/SobreMi'
 import Galeria from './src/components/Galeria'
+import Recorrido from './src/components/Recorrido'
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         <Intro />
         <SobreMi />
         <Galeria />
-        <section id="recorrido" className="ph ph--cream">cuadro a cuadro · paso 4</section>
+        <Recorrido />
         <section id="contacto" className="ph ph--wine">contacto · paso 5</section>
       </main>
     </>

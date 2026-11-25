@@ -1,18 +1,17 @@
 import './globals.css'
-import { IBM_Plex_Mono } from 'next/font/google'
+import { Bricolage_Grotesque } from 'next/font/google'
 
-const plex = IBM_Plex_Mono({
-  subsets: ['latin'],            // incluye ñ y tildes
-  weight: ['400', '700'],        // normal y negrita
-  variable: '--font-plex',
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  variable: '--font-bricolage',
   display: 'swap',
 })
 
-export const metadata = { title: 'lara-muiña | portfolio' }
+export const metadata = { title: 'loubre · fotografía deportiva' }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={plex.variable}>
+    <html lang="es" className={bricolage.variable}>
       <body>{children}</body>
     </html>
   )

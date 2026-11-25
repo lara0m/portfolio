@@ -1,39 +1,19 @@
-'use client'
-
-import { useState } from 'react'
-import Header from './src/components/Header'
-import Hello from './src/pages-content/Hello'
-import MiPerfil from './src/pages-content/MiPerfil'
-import Proyectos from './src/pages-content/Proyectos'
-import Intereses from './src/pages-content/Intereses'
-
-
-
-const TABS = [
-  { id: 'hello', label: 'hello-world!' },
-  { id: 'perfil', label: 'mi-perfil' },
-  { id: 'proyectos', label: 'proyectos' },
-  { id: 'intereses', label: 'intereses' },
-]
+import Navbar from './src/components/Navbar'
+import Intro from './src/components/Intro'
+import SobreMi from './src/components/SobreMi'
+import Galeria from './src/components/Galeria'
 
 export default function Home() {
-  const [active, setActive] = useState<string>('hello')
-
   return (
-    <div className="app">
-      {/* El header solo existe fuera de la portada */}
-      {active !== 'hello' && (
-        <Header tabs={TABS} active={active} onChange={setActive} />
-      )}
-
-      <main className="main">
-        <div className="page" key={active}>
-          {active === 'hello' && <Hello onEnter={() => setActive('perfil')} />}
-          {active === 'perfil' && <MiPerfil />}
-          {active === 'intereses' && <Intereses />}
-          {active === 'proyectos' && <Proyectos />}
-        </div>
+    <>
+      <Navbar />
+      <main>
+        <Intro />
+        <SobreMi />
+        <Galeria />
+        <section id="recorrido" className="ph ph--cream">cuadro a cuadro · paso 4</section>
+        <section id="contacto" className="ph ph--wine">contacto · paso 5</section>
       </main>
-    </div>
+    </>
   )
 }

@@ -42,3 +42,20 @@ export const recorrido = {
     (_, i) => `/loubre/recorrido/foto-${String(i + 1).padStart(2, '0')}.jpg`
   ),
 }
+
+export type Social = {
+  kind: 'instagram' | 'linkedin' | 'email'
+  label: string
+  href: string
+}
+
+export const contacto = {
+  title: 'Contacto',
+  lead: 'Si tenés un partido, un torneo o un equipo que quiera quedar en imágenes, escribime.',
+  phone: { label: '11 5794-5509', href: 'tel:+5491157945509' },
+  socials: [
+    { kind: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/loubre__/' },
+    { kind: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/renata-l%C3%B3pez-bruzzone-975027411/' },   // ← reemplazá
+    { kind: 'email', label: 'Email', href: 'mailto:TU_EMAIL@gmail.com' },                      // ← reemplazá
+  ] as Social[],
+}

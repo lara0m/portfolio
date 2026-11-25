@@ -2,7 +2,7 @@ const LINKS = [
   { href: '#sobre-mi', label: 'Sobre mí' },
   { href: '#galeria', label: 'Galería' },
   { href: '#recorrido', label: 'Recorrido' },
-  { href: '#contacto', label: 'Dimensiones' }, // ← ¿es la sección de contacto?
+  { href: '#contacto', label: 'Contacto' },
 ]
 
 export default function Navbar() {

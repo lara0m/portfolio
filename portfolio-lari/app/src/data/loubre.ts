@@ -56,6 +56,6 @@ export const contacto = {
   socials: [
     { kind: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/loubre__/' },
     { kind: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/renata-l%C3%B3pez-bruzzone-975027411/' },   // ← reemplazá
-    { kind: 'email', label: 'Email', href: 'mailto:TU_EMAIL@gmail.com' },                      // ← reemplazá
+    { kind: 'email', label: 'Email', href: 'mailto:renatalopezbruzzone@gmail.com' },                      // ← reemplazá
   ] as Social[],
 }

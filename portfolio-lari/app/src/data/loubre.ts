@@ -3,17 +3,15 @@
 export const FRAME = { w: 1440, h: 810 } // ← ancho y alto reales de tu frame
 
 export const intro = {
-  // x = borde izquierdo de la cámara · y = donde empieza el lente
-  camera: { src: '/loubre/camara.svg', x: 625, y: 605 },
+  // alto = automático; y = donde empieza el lente
+  camera: { src: '/loubre/camara.svg', x: 590, y: 570, w: 360 },
 
-  // x, y, w, h = los del Figma de cada franja (panel derecho al seleccionarla)
+  // Usá los nombres reales de tus archivos (.svg)
   shots: [
-    { src: '/loubre/intro-1.svg', x: 109, y: 0, w: 565, h: 610 },
-    { src: '/loubre/intro-2.svg', x: 352, y: 0, w: 342, h: 610 },
-    { src: '/loubre/intro-3.svg', x: 540, y: 0, w: 181, h: 610 },
-    { src: '/loubre/intro-4.svg', x: 720, y: 0, w: 181, h: 610 },
-    { src: '/loubre/intro-5.svg', x: 746, y: 0, w: 326, h: 610 },
-    { src: '/loubre/intro-6.svg', x: 766, y: 0, w: 565, h: 610 },
+    { src: '/loubre/intro-1.svg', x: 370, y: 0, w: 306, h: 580 },
+    { src: '/loubre/intro-2.svg', x: 548, y: 0, w: 173, h: 580 },
+    { src: '/loubre/intro-3.svg', x: 719, y: 0, w: 176, h: 580 },
+    { src: '/loubre/intro-4.svg', x: 766, y: 0, w: 304, h: 580 },
   ],
 }
 export const sobreMi = {

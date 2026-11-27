@@ -386,7 +386,9 @@ button { font: inherit; }
 .tile:nth-child(15) { grid-area: 7 / 6 / 9 / 7; }
 .tile:nth-child(16) { grid-area: 8 / 2 / 9 / 4; }
 .tile:nth-child(17) { grid-area: 8 / 4 / 9 / 6; }
-
+.gal__grid--14 .tile:nth-child(12) { grid-area: 6 / 4 / 7 / 6; }
+.gal__grid--14 .tile:nth-child(13) { grid-area: 7 / 1 / 9 / 3; }
+.gal__grid--14 .tile:nth-child(14) { grid-area: 7 / 3 / 9 / 7; }
 /* Cada foto: --r va de 0 (sin revelar) a 1 (revelada), lo escribe el scroll */
 .tile {
   --r: 0;

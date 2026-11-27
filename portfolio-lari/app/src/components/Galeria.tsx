@@ -5,12 +5,15 @@ import { galeria } from '../data/loubre'
 import { prefersReducedMotion } from '../hooks/useInView'
 import Reveal from './Reveal'
 
+// Cantidades de fotos con las que el mosaico queda completo, sin huecos
+const LAYOUTS = [8, 14, 17]
+
 export default function Galeria() {
   const gridRef = useRef<HTMLDivElement>(null)
 
-  // El mosaico tiene dos formatos: 8 fotos o 17
   const photos = galeria.photos
-  const count = photos.length >= 17 ? 17 : Math.min(photos.length, 8)
+  // Usa el mosaico más grande que entre con las fotos que tenés
+  const count = [...LAYOUTS].reverse().find((n) => photos.length >= n) ?? photos.length
   const shown = photos.slice(0, count)
 
   useEffect(() => {
@@ -61,11 +64,16 @@ export default function Galeria() {
           <p className="gal__sub">{galeria.sub}</p>
         </Reveal>
 
-        <div className="gal__grid" ref={gridRef}>
-          {shown.map((src, i) => (
-            <figure className="tile" key={src}>
+        <div className={`gal__grid gal__grid--${count}`} ref={gridRef}>
+          {shown.map((photo, i) => (
+            <figure className="tile" key={photo.src}>
               <div className="tile__z">
-                <img src={src} alt={`Foto de handball ${i + 1}`} loading="lazy" draggable={false} />
+                <img
+                  src={photo.src}
+                  alt={`Foto de handball ${i + 1}`}
+                  loading="lazy"
+                  draggable={false}
+                />
               </div>
               <span className="tile__n">{String(i + 1).padStart(2, '0')}</span>
             </figure>

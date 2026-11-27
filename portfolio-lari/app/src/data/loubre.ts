@@ -25,10 +25,22 @@ export const galeria = {
   title: 'Momentos de cancha',
   sub: 'Una selección de mis fotos de handball:',
   // Usá 8 o 17 fotos (ver el componente). Si tus nombres son otros, listalos acá a mano.
-  photos: Array.from(
-    { length: 17 },
-    (_, i) => `/loubre/galeria/foto-${String(i + 1).padStart(2, '0')}.jpg`
-  ),
+  photos: [
+    { src: '/loubre/galeria/foto-1.svg'},
+    { src: '/loubre/galeria/foto-2.svg'},
+    { src: '/loubre/galeria/foto-3.svg'},
+    { src: '/loubre/galeria/foto-4.svg'},
+    { src: '/loubre/galeria/foto-5.svg'},
+    { src: '/loubre/galeria/foto-6.svg'},
+    { src: '/loubre/galeria/foto-7.svg'},
+    { src: '/loubre/galeria/foto-8.svg'},
+    { src: '/loubre/galeria/foto-9.svg'},
+    { src: '/loubre/galeria/foto-10.svg'},
+    { src: '/loubre/galeria/foto-11.svg'},
+    { src: '/loubre/galeria/foto-12.svg'},
+    { src: '/loubre/galeria/foto-13.svg'},
+    { src: '/loubre/galeria/foto-14.svg'}
+  ]
 }
 
 export const recorrido = {

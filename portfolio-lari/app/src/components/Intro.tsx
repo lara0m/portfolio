@@ -6,6 +6,7 @@ const px = (v: number, total: number) => `${(v / total) * 100}%`
 
 export default function Intro() {
   const { camera, shots } = intro
+  const mid = (shots.length - 1) / 2
 
   return (
     <section
@@ -22,15 +23,8 @@ export default function Intro() {
             src={s.src}
             alt=""
             draggable={false}
-            style={
-              {
-                left: px(s.x, FRAME.w),
-                top: px(s.y, FRAME.h),
-                width: px(s.w, FRAME.w),
-                height: px(s.h, FRAME.h),
-                '--i': i,
-              } as CSSProperties
-            }
+            style={{ '--k': Math.abs(i - mid) } as CSSProperties}
+            
           />
         ))}
 
@@ -47,7 +41,7 @@ export default function Intro() {
           style={{
             left: px(camera.x, FRAME.w),
             top: px(camera.y, FRAME.h),
-            width: px(camera.w, FRAME.w),
+            height: `calc(${px(FRAME.h - camera.y, FRAME.h)} + 2px)`,
           }}
         />
 
@@ -56,8 +50,14 @@ export default function Intro() {
             <h1 className="intro__title">loubre</h1>
             <p className="intro__sub">fotografía deportiva</p>
           </div>
-          <a className="intro__btn rise" style={{ animationDelay: '2.35s' }} href="#galeria">
-            ver mis fotos
+
+          <a className="intro__link rise" style={{ animationDelay: '2.35s' }} href="#galeria">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <rect x="2.5" y="4.5" width="27" height="23" rx="3.5" />
+              <circle cx="11" cy="12" r="2.3" />
+              <path d="M3.5 24 L11.5 17 L17.5 22 L22.5 17.5 L28.5 23" />
+            </svg>
+            <span>mi galería</span>
           </a>
         </div>
       </div>

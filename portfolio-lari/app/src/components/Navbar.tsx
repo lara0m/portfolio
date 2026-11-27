@@ -1,8 +1,8 @@
 const LINKS = [
-  { href: '#sobre-mi', label: 'Sobre mí' },
-  { href: '#galeria', label: 'Galería' },
-  { href: '#recorrido', label: 'Recorrido' },
-  { href: '#contacto', label: 'Contacto' },
+  { href: '#sobre-mi', label: 'sobre mí' },
+  { href: '#galeria', label: 'galería' },
+  { href: '#recorrido', label: 'recorrido' },
+  { href: '#contacto', label: 'contacto' },
 ]
 
 export default function Navbar() {

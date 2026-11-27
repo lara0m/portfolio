@@ -90,7 +90,11 @@ button { font: inherit; }
   clip-path: inset(100% 0 0 0);
   will-change: clip-path;
   animation: shot-in 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  animation-delay: calc(1.6s + var(--i) * 0.14s);
+  animation-delay: calc(1.6s + (var(--k) - 0.5) * 0.16s);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 @keyframes shot-in {
   from { clip-path: inset(100% 0 0 0); }
@@ -167,9 +171,9 @@ button { font: inherit; }
 /* Título, subtítulo y botón */
 .intro__foot {
   position: absolute;
-  left: 4.1%;
-  right: 4.1%;
-  bottom: 6%;
+  left: 3.7%;
+  right: 3.6%;
+  bottom: 6.2%;
   z-index: 4;
   display: flex;
   align-items: flex-end;
@@ -177,27 +181,42 @@ button { font: inherit; }
 }
 .intro__title {
   color: var(--yellow);
-  font-size: calc(4.7 * var(--u));
+  font-size: calc(6.4 * var(--u));      /* antes 4.7 */
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.02em;
 }
 .intro__sub {
-  margin-top: calc(1 * var(--u));
-  font-size: max(13px, calc(1.15 * var(--u)));
+  margin-top: calc(0.5 * var(--u));
+  font-size: max(16px, calc(2.3 * var(--u)));   /* antes 1.15 */
+  font-weight: 500;
 }
-.intro__btn {
-  display: inline-block;
-  padding: calc(1 * var(--u)) calc(2.1 * var(--u));
-  background: var(--yellow);
-  color: var(--wine);
-  border-radius: 999px;
-  font-size: max(13px, calc(1.1 * var(--u)));
-  font-weight: 700;
-  transition: transform 0.2s, box-shadow 0.2s;
+/* Link "mi galería" con ícono */
+.intro__link {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(0.7 * var(--u));
+  color: var(--yellow);
+  font-size: max(13px, calc(1.25 * var(--u)));
+  font-weight: 500;
 }
-.intro__btn:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 8px 28px rgba(255, 246, 126, 0.35); }
-.intro__btn:active { transform: scale(0.96); }
+.intro__link svg {
+  width: max(22px, calc(2.7 * var(--u)));
+  height: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.3s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.intro__link span {
+  padding-bottom: 3px;
+  background: linear-gradient(var(--yellow), var(--yellow)) 0 100% / 0% 1.5px no-repeat;
+  transition: background-size 0.3s;
+}
+.intro__link:hover svg { transform: rotate(-8deg) scale(1.12); }
+.intro__link:hover span { background-size: 100% 1.5px; }
 
 .rise { animation: rise 0.8s ease-out both; }
 @keyframes rise {

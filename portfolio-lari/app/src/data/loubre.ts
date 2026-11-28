@@ -8,10 +8,12 @@ export const intro = {
 
   // Usá los nombres reales de tus archivos (.svg)
   shots: [
-    { src: '/loubre/intro-1.svg', x: 370, y: 0, w: 306, h: 580 },
+    { src: '/loubre/intro-5.svg', x: 117, y: 0, w: 555, h: 580 },
+    { src: '/loubre/intro-1.svg', x: 375, y: 0, w: 306, h: 580 },
     { src: '/loubre/intro-2.svg', x: 548, y: 0, w: 173, h: 580 },
     { src: '/loubre/intro-3.svg', x: 719, y: 0, w: 176, h: 580 },
-    { src: '/loubre/intro-4.svg', x: 766, y: 0, w: 304, h: 580 },
+    { src: '/loubre/intro-4.svg', x: 760, y: 0, w: 304, h: 580 },
+    { src: '/loubre/intro-6.svg', x: 765, y: 0, w: 551, h: 580 },
   ],
 }
 export const sobreMi = {

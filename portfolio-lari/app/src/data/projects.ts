@@ -48,7 +48,7 @@ export const projects: Project[] = [
     title: 'Marcelo Ticardo',
     category: 'robótica',
     description: 'Robot guía diseñado para orientar a los alumnos hacia sus aulas.',
-    image: null,
+    image: '/marcelo.svg',
     techs: ['HTML', 'CSS'],
     meta: '3.º año',
     links: [

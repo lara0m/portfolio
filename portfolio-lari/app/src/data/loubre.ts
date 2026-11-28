@@ -8,7 +8,7 @@ export const intro = {
 
   // Usá los nombres reales de tus archivos (.svg)
   shots: [
-    { src: '/loubre/intro-5.svg', x: 117, y: 0, w: 555, h: 580 },
+    { src: '/loubre/intro-5.svg', x: 150, y: 0, w: 555, h: 600 },
     { src: '/loubre/intro-1.svg', x: 375, y: 0, w: 306, h: 580 },
     { src: '/loubre/intro-2.svg', x: 548, y: 0, w: 173, h: 580 },
     { src: '/loubre/intro-3.svg', x: 719, y: 0, w: 176, h: 580 },
@@ -53,7 +53,7 @@ export const recorrido = {
   canister: '',
   photos: Array.from(
     { length: 7 },
-    (_, i) => `/loubre/recorrido/foto-${String(i + 1).padStart(2, '0')}.jpg`
+    (_, i) => `/loubre/recorrido/foto-${String(i + 1).padStart(2, '0')}.svg`
   ),
 }
 
